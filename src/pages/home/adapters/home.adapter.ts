@@ -1,11 +1,11 @@
 import { getArtistViewModelAdapter } from "../../../shared/adapters/artist.adapter";
 import { Album, Playlist } from "../../../shared/entities";
-import { Card, CardType } from "../../../shared/models/card.type";
+import { SpotifyCard, CardType } from "../../../shared/models/card.type";
 
-export const albumHomeDataAdapter = (albums: Album[] | undefined): Card[] => {
+export const albumHomeDataAdapter = (albums: Album[] | undefined): SpotifyCard[] => {
   if (!albums) return [];
 
-  return albums.map((album: Album): Card => {
+  return albums.map((album: Album): SpotifyCard => {
     return {
       ...album,
       title: album.name,
@@ -20,10 +20,10 @@ export const albumHomeDataAdapter = (albums: Album[] | undefined): Card[] => {
 };
 export const playlistsHomeDataAdapter = (
   playlists: Playlist[] | undefined
-): Card[] => {
+): SpotifyCard[] => {
   if (!playlists) return [];
 
-  return playlists.map((playlist: Playlist): Card => {
+  return playlists.map((playlist: Playlist): SpotifyCard => {
     return {
       ...playlist,
       title: playlist.name,

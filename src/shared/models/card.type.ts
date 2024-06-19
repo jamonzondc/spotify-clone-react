@@ -5,7 +5,7 @@ export enum CardType {
   ALBUM = 'album'
 }
 
-export type Card = {
+export type SpotifyCard = {
   id: string;
   title: string;
   subtitle: string;

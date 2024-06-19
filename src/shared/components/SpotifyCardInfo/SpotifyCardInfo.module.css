@@ -1,0 +1,21 @@
+.card {
+  width: 200px;
+  height: 280px;
+}
+
+.img {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.actionButton {
+  position: absolute;
+  bottom: 140px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.card:hover .actionButton {
+  opacity: 1;
+}

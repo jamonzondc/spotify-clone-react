@@ -1,6 +1,6 @@
-import { Card } from "../../../shared/models/card.type";
+import { SpotifyCard } from "../../../shared/models/card.type";
 
 export interface HomeUseCase {
-  getAlbums(): Promise<Card[]>;
-  getPlaylists(): Promise<Card[]>;
+  getAlbums(): Promise<SpotifyCard[]>;
+  getPlaylists(): Promise<SpotifyCard[]>;
 }

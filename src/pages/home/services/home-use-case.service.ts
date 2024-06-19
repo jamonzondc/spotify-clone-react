@@ -1,6 +1,6 @@
 import { Album, Playlist } from "../../../shared/entities";
 import { BasicResponse } from "../../../shared/models";
-import { Card } from "../../../shared/models/card.type";
+import { SpotifyCard } from "../../../shared/models/card.type";
 import { albumHomeDataAdapter, playlistsHomeDataAdapter } from "../adapters";
 import { AlbumApi } from "../../../shared/api";
 import { HomeUseCase } from "./home-use-case.interface";
@@ -11,7 +11,7 @@ export class HomeUseCaseService implements HomeUseCase {
 
   constructor(private albumApi: AlbumApi, private playlistApi: PlaylistApi) {}
 
-  public async getAlbums(): Promise<Card[]> {
+  public async getAlbums(): Promise<SpotifyCard[]> {
     const response: BasicResponse<Album[]> = await this.albumApi.getAlbums(
       this.cardsToShow
     );
@@ -20,7 +20,7 @@ export class HomeUseCaseService implements HomeUseCase {
     return albumHomeDataAdapter(response.getData());
   }
 
-  public async getPlaylists(): Promise<Card[]> {
+  public async getPlaylists(): Promise<SpotifyCard[]> {
     const response: BasicResponse<Playlist[]> =
       await this.playlistApi.getPlaylists(this.cardsToShow);
 
