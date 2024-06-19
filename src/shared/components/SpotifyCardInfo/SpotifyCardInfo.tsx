@@ -22,7 +22,7 @@ export const SpotifyCardInfo = ({ data }: { data: SpotifyCard }) => {
         className={SpotifyCardInfoStyle.img}
       ></CardMedia>
 
-      <CardContent style={{ padding: "0", position: "relative" }}>
+      <CardContent className={SpotifyCardInfoStyle.cardContent}>
         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
           {data.title}
         </Typography>
